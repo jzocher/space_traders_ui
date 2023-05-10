@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6q2t1gt6s3jw"]
+
+[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_c7716"]
+[ext_resource type="Texture2D" uid="uid://cpspgmmcvos4r" path="res://Assets/title_bg.jpg" id="2_1ejq3"]
+
+[sub_resource type="Theme" id="Theme_j2hr8"]
+
+[sub_resource type="Theme" id="Theme_lijtm"]
+default_font_size = 75
+
+[sub_resource type="Theme" id="Theme_6ux4e"]
+default_font_size = 25
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 128.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c7716")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+texture = ExtResource("2_1ejq3")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -100.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(300, 100)
+
+[node name="ColorRect" type="ColorRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_j2hr8")
+color = Color(0.0745098, 0.278431, 0.403922, 0.882353)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -85.5
+offset_right = 254.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(569, 172)
+alignment = 1
+
+[node name="Label" type="Label" parent="Container/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_lijtm")
+text = "Space Traders"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6ux4e")
+text = "Access Token:"
+
+[node name="TokenTextbox" type="TextEdit" parent="Container/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Container/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="Container/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Container/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LoginBtn" type="Button" parent="Container/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Login"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="Container/VBoxContainer/HBoxContainer3/LoginBtn" to="." method="_on_login_btn_pressed"]
