@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6q2t1gt6s3jw"]
+[gd_scene load_steps=7 format=3 uid="uid://c6q2t1gt6s3jw"]
 
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_c7716"]
 [ext_resource type="Texture2D" uid="uid://cpspgmmcvos4r" path="res://Assets/title_bg.jpg" id="2_1ejq3"]
-
-[sub_resource type="Theme" id="Theme_j2hr8"]
+[ext_resource type="Texture2D" uid="uid://cyviy84p5b2gm" path="res://Assets/space_traders_logo-over-black.svg" id="3_m7kfg"]
 
 [sub_resource type="Theme" id="Theme_lijtm"]
-default_font_size = 75
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_j2hr8"]
 
 [sub_resource type="Theme" id="Theme_6ux4e"]
 default_font_size = 25
@@ -16,8 +17,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 128.0
-offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c7716")
@@ -33,6 +32,26 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 texture = ExtResource("2_1ejq3")
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 549.0
+offset_top = 250.0
+offset_right = 1372.0
+offset_bottom = 390.0
+pivot_offset = Vector2(411, 70)
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("3_m7kfg")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+theme = SubResource("Theme_lijtm")
+text = "Space Traders"
+horizontal_alignment = 1
+
 [node name="Container" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -40,13 +59,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -100.0
-offset_right = 300.0
-offset_bottom = 150.0
+offset_left = -260.0
+offset_top = -120.0
+offset_right = 260.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(300, 100)
+pivot_offset = Vector2(255, 110)
 
 [node name="ColorRect" type="ColorRect" parent="Container"]
 layout_mode = 1
@@ -55,8 +74,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(255, 110)
 theme = SubResource("Theme_j2hr8")
-color = Color(0.0745098, 0.278431, 0.403922, 0.882353)
+color = Color(0.113725, 0.286275, 0.45098, 0.882353)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Container"]
 layout_mode = 1
@@ -65,20 +85,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -254.0
-offset_top = -85.5
-offset_right = 254.0
-offset_bottom = 85.5
+offset_left = -250.0
+offset_top = -105.0
+offset_right = 250.0
+offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(569, 172)
 alignment = 1
-
-[node name="Label" type="Label" parent="Container/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_lijtm")
-text = "Space Traders"
-horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer"]
 layout_mode = 2
@@ -99,6 +112,17 @@ layout_mode = 2
 
 [node name="TextEdit" type="TextEdit" parent="Container/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Container/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="RememberCheckBox" type="CheckBox" parent="Container/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="RememberLabel" type="Label" parent="Container/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Rembmber me"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Container/VBoxContainer"]
 layout_mode = 2
