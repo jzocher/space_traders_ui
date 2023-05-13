@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+	<title>maximize</title>
+	<defs>
+		<image  width="512" height="512" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIAAQMAAADOtka5AAAAAXNSR0IB2cksfwAAAAZQTFRFAAAA////pdmf3QAAAAJ0Uk5TAP9bkSK1AAABaUlEQVR4nO3dMW7CMBSAYaoMjBwhR8nR0qPlKDkCYwdEKphquxS9PqtE1ffP+JNIHI9+h4MkSZKknXfaQp0bYI4B13r9W2z9tr1XwDEKrBUwRoGPCpiiwKUCouu3LfkM66c4xIEl9xLq1xDch7fOfYExDpQbYYoDl77AHAeufYH4+movZ4FffArlx3AD2lPuh07fAJH19//8FRjaA+JJU/k5Du0R9aSxAUKP4P4QegNrDDj+R2B58MsHDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAegDUG7PGq8DTw1ze+t3fOpy+tD16bP5dA+uL+LqMDUsMLXj9/YQczKKY40HkOxxgHyr3/+mko6YEuQxxYCiA91CY9Vic/2GeMAvURmB5ulB6vlB7wlB8xJUmSJGlnfQIvKg7VepDRwwAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

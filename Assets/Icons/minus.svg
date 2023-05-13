@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+	<title>minus</title>
+	<defs>
+		<image  width="401" height="198" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZEAAADGAQMAAAApEy/vAAAAAXNSR0IB2cksfwAAAAZQTFRFAAAA////pdmf3QAAAAJ0Uk5TAP9bkSK1AAAAiklEQVR4nO3UoRGAMBBE0TAIJCVQCqWF0iiFEpAIhmC41ZvMgOE//0UuyaUEAAAAAAB+JhfToqR3k7KrGe3mVDPZTVEz+40OlP1mjcZP1HQVzdbQxLD962lrjqcZaGg+bN5+19G0/NOafdDSaO9kv1mimf0mkop9fanxL/VQ4w9hTQAAAAAAAHjTDfUXkdJ5RaVRAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="75" y="160"/>
+</svg>
