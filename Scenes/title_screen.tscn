@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6q2t1gt6s3jw"]
+[gd_scene load_steps=7 format=3 uid="uid://dvae5dxqac60m"]
 
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_c7716"]
 [ext_resource type="Texture2D" uid="uid://cpspgmmcvos4r" path="res://Assets/title_bg.jpg" id="2_1ejq3"]
-[ext_resource type="Texture2D" uid="uid://cyviy84p5b2gm" path="res://Assets/space_traders_logo-over-black.svg" id="3_m7kfg"]
+[ext_resource type="Texture2D" uid="uid://cyviy84p5b2gm" path="res://Assets/Icons/space_traders_logo.svg" id="3_6bv1d"]
 
 [sub_resource type="Theme" id="Theme_lijtm"]
 default_font_size = 100
@@ -23,27 +23,31 @@ script = ExtResource("1_c7716")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -960.0
+offset_top = -540.0
 offset_right = 960.0
-offset_bottom = 1080.0
+offset_bottom = 540.0
 grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_1ejq3")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 549.0
-offset_top = 250.0
-offset_right = 1372.0
-offset_bottom = 390.0
+offset_left = 229.0
+offset_top = 200.0
+offset_right = 1052.0
+offset_bottom = 340.0
 pivot_offset = Vector2(411, 70)
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer4"]
 layout_mode = 2
-texture = ExtResource("3_m7kfg")
+texture = ExtResource("3_6bv1d")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer4"]
@@ -60,9 +64,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -260.0
-offset_top = -120.0
+offset_top = -10.0
 offset_right = 260.0
-offset_bottom = 40.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(255, 110)
