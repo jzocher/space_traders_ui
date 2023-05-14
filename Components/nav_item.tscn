@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://bldm2hcnml2jj"]
+
+[ext_resource type="Texture2D" uid="uid://dxwl5eqa8c1bq" path="res://Assets/Icons/ship.png" id="1_orstu"]
+[ext_resource type="Script" path="res://Scripts/nav_item.gd" id="1_tv73o"]
+
+[node name="NavItem" type="Control" groups=["navitem"]]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_tv73o")
+active = true
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.12549, 0.137255, 0.145098, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_right = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Nav Item"
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(35, 25)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_orstu")
+
+[node name="Active" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.913725, 0.752941, 0.27451, 1)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
