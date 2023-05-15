@@ -3,6 +3,7 @@ extends Control
 @export var icon : CompressedTexture2D
 @export var label = "Fleet"
 @export var active = false
+@export var page : NodePath
 
 func _ready():
 	$Icon.texture = icon
@@ -25,6 +26,7 @@ func deactive():
 	
 func update_elements():
 	$Active.visible = active
+	get_node(page).visible = active
 
 func _on_gui_input(event):
 	if event is InputEventMouseButton:

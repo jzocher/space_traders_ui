@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://clcimggeq2ttq"]
+[gd_scene load_steps=14 format=3 uid="uid://clcimggeq2ttq"]
 
 [ext_resource type="Script" path="res://Scripts/overview.gd" id="1_xvqju"]
 [ext_resource type="Texture2D" uid="uid://dtkfa7lo1orkv" path="res://Assets/Icons/menu.png" id="3_dwo7y"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bo8ixqo8cvann" path="res://Assets/Icons/copy.svg" id="4_3x0g8"]
 [ext_resource type="Texture2D" uid="uid://dxwl5eqa8c1bq" path="res://Assets/Icons/ship.png" id="4_aht53"]
 [ext_resource type="Texture2D" uid="uid://cbkn7wir0h7ax" path="res://Assets/Icons/exit.svg" id="6_32e1o"]
+[ext_resource type="Texture2D" uid="uid://dnyebarnf2ph8" path="res://Assets/Icons/settings.svg" id="7_w4gku"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1mk5"]
 bg_color = Color(0.12549, 0.137255, 0.145098, 1)
@@ -111,34 +112,108 @@ texture = ExtResource("3_dwo7y")
 [node name="Fleet" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource("3_oky33")]
 layout_mode = 2
 icon = ExtResource("4_aht53")
-active = false
+page = NodePath("../../../../Body/Pages/Fleet")
 
 [node name="Test1" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource("3_oky33")]
 layout_mode = 2
 icon = ExtResource("4_3x0g8")
 label = "Test1"
 active = false
+page = NodePath("../../../../Body/Pages/Test1")
 
 [node name="Test2" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource("3_oky33")]
 layout_mode = 2
 icon = ExtResource("6_32e1o")
 label = "Test2"
 active = false
+page = NodePath("../../../../Body/Pages/Test1")
 
 [node name="BotContainer" type="VBoxContainer" parent="HBoxContainer/Sidebar/VBoxContainer"]
 layout_mode = 2
+alignment = 2
+
+[node name="Settings" parent="HBoxContainer/Sidebar/VBoxContainer/BotContainer" instance=ExtResource("3_oky33")]
+layout_mode = 2
+icon = ExtResource("7_w4gku")
+label = "Settings"
+active = false
+page = NodePath("../../../../Body/Pages/Fleet")
 
 [node name="Body" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="TopBar" type="HBoxContainer" parent="HBoxContainer/Body"]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="TitleBar" type="Control" parent="HBoxContainer/Body/TopBar"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="HBoxContainer/Body/TopBar/TitleBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Space Traders"
+vertical_alignment = 1
+
+[node name="Pages" type="Control" parent="HBoxContainer/Body"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Fleet" type="Control" parent="HBoxContainer/Body/Pages"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Body/Pages/Fleet"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fleet page
+"
+
+[node name="Test1" type="Control" parent="HBoxContainer/Body/Pages"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Body/Pages/Test1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -13.0
+offset_right = 37.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Test Page"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 visible = false
