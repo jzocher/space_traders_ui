@@ -5,7 +5,7 @@ var following = false
 var start_pos = Vector2i()
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	$HBoxContainer/Body/TopBar/TitleBar/Title.text += " - "+agent_info.agent_name
 	#$MarginContainer/VBoxContainer/HBoxContainer/GreetingLabel.text += agent_info.agent_name
 	#$MarginContainer/VBoxContainer/HBoxContainer/CreditsLabel.text += str(agent_info.credits)
 

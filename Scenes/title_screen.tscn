@@ -52,7 +52,6 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer4"]
 layout_mode = 2
 texture = ExtResource("3_6bv1d")
-expand_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer4"]
 layout_mode = 2
@@ -74,7 +73,7 @@ offset_bottom = 280.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Choice" type="Control" parent="ControlPanel"]
+[node name="ChoiceMenu" type="Control" parent="ControlPanel"]
 visible = false
 layout_mode = 1
 anchors_preset = 5
@@ -85,7 +84,7 @@ offset_right = 115.0
 offset_bottom = 70.0
 grow_horizontal = 2
 
-[node name="ColorRect" type="ColorRect" parent="ControlPanel/Choice"]
+[node name="ColorRect" type="ColorRect" parent="ControlPanel/ChoiceMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,7 +93,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.12549, 0.137255, 0.145098, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ControlPanel/Choice"]
+[node name="MarginContainer" type="MarginContainer" parent="ControlPanel/ChoiceMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,10 +105,10 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Control" type="Control" parent="ControlPanel/Choice/MarginContainer"]
+[node name="Control" type="Control" parent="ControlPanel/ChoiceMenu/MarginContainer"]
 layout_mode = 2
 
-[node name="Login" type="Button" parent="ControlPanel/Choice/MarginContainer/Control"]
+[node name="LoginChoice" type="Button" parent="ControlPanel/ChoiceMenu/MarginContainer/Control"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -122,7 +121,7 @@ theme_override_colors/font_color = Color(0.913725, 0.752941, 0.27451, 1)
 theme_override_font_sizes/font_size = 20
 text = "Login"
 
-[node name="Register" type="Button" parent="ControlPanel/Choice/MarginContainer/Control"]
+[node name="RegisterChoice" type="Button" parent="ControlPanel/ChoiceMenu/MarginContainer/Control"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -138,7 +137,7 @@ theme_override_colors/font_color = Color(0.913725, 0.752941, 0.27451, 1)
 theme_override_font_sizes/font_size = 20
 text = "Register"
 
-[node name="Login" type="Control" parent="ControlPanel"]
+[node name="LoginMenu" type="Control" parent="ControlPanel"]
 visible = false
 layout_mode = 1
 anchors_preset = 5
@@ -149,7 +148,7 @@ offset_right = 265.0
 offset_bottom = 155.0
 grow_horizontal = 2
 
-[node name="ColorRect" type="ColorRect" parent="ControlPanel/Login"]
+[node name="ColorRect" type="ColorRect" parent="ControlPanel/LoginMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,7 +159,7 @@ pivot_offset = Vector2(255, 110)
 theme = SubResource("Theme_j2hr8")
 color = Color(0.12549, 0.137255, 0.145098, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ControlPanel/Login"]
+[node name="MarginContainer" type="MarginContainer" parent="ControlPanel/LoginMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -172,56 +171,55 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ControlPanel/Login/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlPanel/LoginMenu/MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ControlPanel/Login/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ControlPanel/LoginMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ControlPanel/Login/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="ControlPanel/LoginMenu/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_6ux4e")
 text = "Access Token:"
 
-[node name="TokenTextbox" type="TextEdit" parent="ControlPanel/Login/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TokenTextbox" type="TextEdit" parent="ControlPanel/LoginMenu/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/background_color = Color(0.219608, 0.235294, 0.25098, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="ControlPanel/Login/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="ControlPanel/LoginMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 2
 
-[node name="RememberCheckBox" type="CheckBox" parent="ControlPanel/Login/MarginContainer/VBoxContainer/HBoxContainer5"]
+[node name="RememberCheckBox" type="CheckBox" parent="ControlPanel/LoginMenu/MarginContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
 
-[node name="RememberLabel" type="Label" parent="ControlPanel/Login/MarginContainer/VBoxContainer/HBoxContainer5"]
+[node name="RememberLabel" type="Label" parent="ControlPanel/LoginMenu/MarginContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
 text = "Rembmber me"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="ControlPanel/Login/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="ControlPanel/LoginMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="LoginBtn" type="Button" parent="ControlPanel/Login/MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="LoginBtn" type="Button" parent="ControlPanel/LoginMenu/MarginContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.913725, 0.752941, 0.27451, 1)
 theme_override_font_sizes/font_size = 20
 text = "Login"
 
-[node name="BackBtn" type="Button" parent="ControlPanel/Login/MarginContainer"]
+[node name="BackBtn" type="Button" parent="ControlPanel/LoginMenu/MarginContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Back"
 
-[node name="Register" type="Control" parent="ControlPanel"]
-visible = false
+[node name="RegisterMenu" type="Control" parent="ControlPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -231,7 +229,7 @@ offset_right = 265.0
 offset_bottom = 200.0
 grow_horizontal = 2
 
-[node name="ColorRect" type="ColorRect" parent="ControlPanel/Register"]
+[node name="ColorRect" type="ColorRect" parent="ControlPanel/RegisterMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -240,7 +238,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.12549, 0.137255, 0.145098, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ControlPanel/Register"]
+[node name="MarginContainer" type="MarginContainer" parent="ControlPanel/RegisterMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -252,10 +250,10 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Control" type="Control" parent="ControlPanel/Register/MarginContainer"]
+[node name="Control" type="Control" parent="ControlPanel/RegisterMenu/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ControlPanel/Register/MarginContainer/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlPanel/RegisterMenu/MarginContainer/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -263,37 +261,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ControlPanel/Register/MarginContainer/Control/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ControlPanel/Register/MarginContainer/Control/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="AgentSymbolLabel" type="Label" parent="ControlPanel/Register/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="AgentSymbolLabel" type="Label" parent="ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_6ktxs")
 text = "Username:"
 
-[node name="FactionLabel" type="Label" parent="ControlPanel/Register/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="FactionLabel" type="Label" parent="ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ky3jn")
 text = "Faction:"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="ControlPanel/Register/MarginContainer/Control/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="AgentSymbolText" type="TextEdit" parent="ControlPanel/Register/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="AgentSymbolText" type="TextEdit" parent="ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="FactionText" type="TextEdit" parent="ControlPanel/Register/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="FactionText" type="TextEdit" parent="ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Register" type="Button" parent="ControlPanel/Register/MarginContainer/Control"]
+[node name="RegisterBtn" type="Button" parent="ControlPanel/RegisterMenu/MarginContainer/Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -309,7 +307,7 @@ theme_override_colors/font_color = Color(0.913725, 0.752941, 0.27451, 1)
 theme_override_font_sizes/font_size = 20
 text = "Register"
 
-[node name="BackBtn" type="Button" parent="ControlPanel/Register/MarginContainer"]
+[node name="BackBtn" type="Button" parent="ControlPanel/RegisterMenu/MarginContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -319,8 +317,9 @@ text = "Back
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="ControlPanel/Choice/MarginContainer/Control/Login" to="." method="_on_login_pressed"]
-[connection signal="pressed" from="ControlPanel/Choice/MarginContainer/Control/Register" to="." method="_on_register_pressed"]
-[connection signal="pressed" from="ControlPanel/Login/MarginContainer/VBoxContainer/HBoxContainer3/LoginBtn" to="." method="_on_login_btn_pressed"]
-[connection signal="pressed" from="ControlPanel/Login/MarginContainer/BackBtn" to="." method="_on_back_btn_pressed"]
-[connection signal="pressed" from="ControlPanel/Register/MarginContainer/BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="ControlPanel/ChoiceMenu/MarginContainer/Control/LoginChoice" to="." method="_on_login_choice_pressed"]
+[connection signal="pressed" from="ControlPanel/ChoiceMenu/MarginContainer/Control/RegisterChoice" to="." method="_on_register_choice_pressed"]
+[connection signal="pressed" from="ControlPanel/LoginMenu/MarginContainer/VBoxContainer/HBoxContainer3/LoginBtn" to="." method="_on_login_btn_pressed"]
+[connection signal="pressed" from="ControlPanel/LoginMenu/MarginContainer/BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="ControlPanel/RegisterMenu/MarginContainer/Control/RegisterBtn" to="." method="_on_register_btn_pressed"]
+[connection signal="pressed" from="ControlPanel/RegisterMenu/MarginContainer/BackBtn" to="." method="_on_back_btn_pressed"]
