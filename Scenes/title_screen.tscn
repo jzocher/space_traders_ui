@@ -138,7 +138,6 @@ theme_override_font_sizes/font_size = 20
 text = "Register"
 
 [node name="LoginMenu" type="Control" parent="ControlPanel"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -220,6 +219,7 @@ size_flags_vertical = 8
 text = "Back"
 
 [node name="RegisterMenu" type="Control" parent="ControlPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -432,6 +432,9 @@ Headquarters: NULL
 Traits: Self-Sufficient, DEFENSIVE, Proud, Diverse
 Recruiting: No
 "
+
+[node name="MissingInfoDialog" type="AcceptDialog" parent="ControlPanel/RegisterMenu"]
+initial_position = 2
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
