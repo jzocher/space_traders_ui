@@ -291,6 +291,15 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="HBoxContainer" type="HBoxContainer" parent="ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_direction = 3
+layout_mode = 2
+
+[node name="FactionsInfo" type="Button" parent="ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "What are Factions?"
+flat = true
+
 [node name="RegisterBtn" type="Button" parent="ControlPanel/RegisterMenu/MarginContainer/Control"]
 layout_mode = 1
 anchors_preset = 7
@@ -315,11 +324,137 @@ size_flags_vertical = 8
 text = "Back
 "
 
+[node name="Factions" type="Control" parent="ControlPanel/RegisterMenu"]
+visible = false
+anchors_preset = 0
+offset_left = 536.0
+offset_top = -71.0
+offset_right = 876.0
+offset_bottom = 329.0
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="ControlPanel/RegisterMenu/Factions"]
+layout_mode = 0
+offset_right = 340.0
+offset_bottom = 400.0
+color = Color(0.12549, 0.137255, 0.145098, 1)
+
+[node name="FactionsInfoDialog" type="RichTextLabel" parent="ControlPanel/RegisterMenu/Factions"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 346.0
+offset_bottom = 397.0
+text = "Cosmic Engineers (ID: COSMIC)
+The Cosmic Engineers are a group of highly advanced scientists and engineers who seek to terraform and colonize new worlds, pushing the boundaries of technology and exploration.
+
+Headquarters: X1-FZ42
+Traits: Innovative, Bold, Visionary, Curious
+Recruiting: Yes
+
+---
+
+Galactic Alliance (ID: GALACTIC)
+The Galactic Alliance is a coalition of planets and factions that have banded together for mutual protection and support, working together to defend against external threats and promote cooperation.
+
+Headquarters: X1-SV67
+Traits: Cooperative, United, Peaceful, Strategic
+Recruiting: Yes
+
+---
+
+Quantum Federation (ID: QUANTUM)
+The Quantum Federation is a group of planets and factions that have joined together to share knowledge and technology, using their collective expertise to advance the science and technology of the galaxy.
+
+Headquarters: X1-FK36
+Traits: Intelligent, Research-Focused, Collaborative, Progressive
+Recruiting: Yes
+
+---
+
+Stellar Dominion (ID: DOMINION)
+The Stellar Dominion is a powerful, expansionist faction that seeks to conquer and control as many systems as possible, using their advanced technology and military might to dominate their rivals.
+
+Headquarters: X1-SY15
+Traits: Militaristic, Aggressive, Imperialistic, Industrious
+Recruiting: Yes
+
+---
+
+Astro-Salvage Alliance (ID: ASTRO)
+The Astro-Salvage Alliance is a group of scavengers and salvagers who search the galaxy for ancient artifacts and valuable technology, often combing through old ship battlegrounds and derelict space stations.
+
+Headquarters: X1-QP6
+Traits: Scavengers, Treasure Hunters, Resourceful, Dexterous
+Recruiting: Yes
+
+---
+
+Seventh Space Corsairs (ID: CORSAIRS)
+The Seventh Space Corsairs are a feared group of pirates and raiders who operate throughout the galaxy, preying on merchant ships and plundering valuable cargo.
+
+Headquarters: X1-VD45
+Traits: Unpredictable, Brutal, Fleeting, Adaptable
+Recruiting: Yes
+
+---
+
+Voidfarers (ID: VOID)
+The Voidfarers are a group of nomadic traders and adventurers who travel the galaxy in search of riches and adventure, willing to take risks and explore the unknown.
+
+Headquarters: X1-FX80
+Traits: Daring, Exploratory, Resourceful, Flexible
+Recruiting: Yes
+
+---
+
+Obsidian Syndicate (ID: OBSIDIAN)
+The Obsidian Syndicate is a secretive and powerful organization, often involved in illicit activities. They have a vast network of informants and are known for their intelligence capabilities. Not much is known about their actual structure or aims, as they are a highly guarded faction.
+
+Headquarters: X1-XU25
+Traits: Secretive, Intelligent, Smugglers, Unpredictable
+Recruiting: Yes
+
+---
+
+Aegis Collective (ID: AEGIS)
+The Aegis Collective is a group of fortified settlements united under a common goal: survival. They focus on defensive strategies and are known to be exceptionally self-sufficient. Despite their somewhat closed-off nature, they are always willing to take in those who need protection.
+
+Headquarters: X1-BN96
+Traits: Defensive, Self-Sufficient, Proud, Welcoming
+Recruiting: Yes
+
+---
+
+United Independent Settlements (ID: UNITED)
+The United Independent Settlements is a loose coalition of small settlements and outposts that have joined together for mutual support and protection, working to defend their independence against larger factions and protect their way of life.
+
+Headquarters: NULL
+Traits: Self-Sufficient, DEFENSIVE, Proud, Diverse
+Recruiting: No
+"
+
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Version" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 109.0
+offset_bottom = 23.0
+text = "Version:
+"
+
+[node name="LastReset" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 20.0
+offset_right = 89.0
+offset_bottom = 43.0
+text = "Last Reset:"
 
 [connection signal="pressed" from="ControlPanel/ChoiceMenu/MarginContainer/Control/LoginChoice" to="." method="_on_login_choice_pressed"]
 [connection signal="pressed" from="ControlPanel/ChoiceMenu/MarginContainer/Control/RegisterChoice" to="." method="_on_register_choice_pressed"]
 [connection signal="pressed" from="ControlPanel/LoginMenu/MarginContainer/VBoxContainer/HBoxContainer3/LoginBtn" to="." method="_on_login_btn_pressed"]
 [connection signal="pressed" from="ControlPanel/LoginMenu/MarginContainer/BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/FactionsInfo" to="." method="_on_factions_info_pressed"]
 [connection signal="pressed" from="ControlPanel/RegisterMenu/MarginContainer/Control/RegisterBtn" to="." method="_on_register_btn_pressed"]
 [connection signal="pressed" from="ControlPanel/RegisterMenu/MarginContainer/BackBtn" to="." method="_on_back_btn_pressed"]

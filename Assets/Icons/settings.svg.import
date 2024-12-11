@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/settings.svg-2aa0f389da6ad0a7e346738ae84fd469
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
