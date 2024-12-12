@@ -1,6 +1,6 @@
 extends Node
 
-var auth_token = ""
+var auth_token = "test"
 var account_id = ""
 var agent_name = ""
 var headquarters = ""
@@ -12,15 +12,6 @@ var current_faction = {}
 var current_ship = {}
 
 
-#var "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiUkVIQ09aIiwidmVyc2lvbiI6InYyLjIuMCIsInJlc2V0X2RhdGUiOiIyMDI0LTEwLTI3IiwiaWF0IjoxNzMzODc5MTY5LCJzdWIiOiJhZ2VudC10b2tlbiJ9.a2OV9pLqNO_3dvh7wQk2TtGNQhkvlwOEtMs5rqX3P5lSpbwRSCHy24uKHVhgf2E2LSK08GbTfdh9a6VUL-Vq-TANSoPo5TU8a10CUc0lkwtzNS_zFJKBOZ3E63txd8D-ZQhzdodQN7b_qoypQFDm5KVzOOZCw71N-IynKeqeiUp3TxJGS3sfUDGotPBfFH95vgQvFhDzfry6BVqvXIDyfoZwr3Cm7biUL8d3GZLvosabrfEFh6hsXk2MWQXbFWIbrqeXaVk-9p_SsaKWjPs9BJGiM2ynN1ppTNsuXEW7rytr3Ad2D85yT0H2rw_EHurp8Y6pD-9TzPyCUG4GzIfWaw",
-#var "agent": {
-	  #"accountId": "cm4j6w1jq011cs60csaj2uiq9",
-	  #"symbol": "REHCOZ",
-	  #"headquarters": "X1-J69-A1",
-	  #"credits": 175000,
-	  #"startingFaction": "COSMIC",
-	  #"shipCount": 0
-	#},
 	#"contract": {
 	  #"id": "cm4j6w1lp011es60ctzkfrmt5",
 	  #"factionSymbol": "COSMIC",

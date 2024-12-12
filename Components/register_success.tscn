@@ -1,0 +1,130 @@
+[gd_scene load_steps=4 format=3 uid="uid://ukeiiira3a7l"]
+
+[ext_resource type="Script" path="res://Scripts/register_success.gd" id="1_m842s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihpib"]
+bg_color = Color(0.381703, 0.381703, 0.381703, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stl0m"]
+bg_color = Color(0.0431972, 0.671279, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[node name="RegisterSuccess" type="Window"]
+title = "Success"
+initial_position = 2
+size = Vector2i(800, 500)
+script = ExtResource("1_m842s")
+
+[node name="Pad" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="v1" type="VBoxContainer" parent="Pad"]
+layout_mode = 2
+
+[node name="Welcome" type="Label" parent="Pad/v1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Welcome Agent"
+horizontal_alignment = 1
+
+[node name="Intro" type="Label" parent="Pad/v1"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+text = "You are now a Space Trader! Your goal is to build your fleet of ships, complete contracts, and grow your trading empire! Yada, yada, yada..."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Pad/v1"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="SaveAlert" type="Label" parent="Pad/v1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.858824, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "!!! Save this information !!!"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="SaveInfo" type="Label" parent="Pad/v1"]
+custom_minimum_size = Vector2(550, 30)
+layout_mode = 2
+text = "This is your authorization token. This is the only way to access your account! If you lose this token, there is no way to recover it and you will not be able to access your account"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Container" type="Control" parent="Pad/v1"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.02
+
+[node name="ColorRect" type="ColorRect" parent="Pad/v1/Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.197937, 0.197937, 0.197937, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Pad2" type="MarginContainer" parent="Pad/v1/Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="AccessToken" type="RichTextLabel" parent="Pad/v1/Container/Pad2"]
+layout_mode = 2
+focus_mode = 2
+theme_override_constants/text_highlight_v_padding = 10
+text = "This is test text for the label"
+autowrap_mode = 1
+selection_enabled = true
+deselect_on_focus_loss_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pad/v1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+alignment = 2
+
+[node name="LeftPad" type="Label" parent="Pad/v1/HBoxContainer"]
+layout_mode = 2
+
+[node name="Confirm" type="Button" parent="Pad/v1/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ihpib")
+theme_override_styles/hover = SubResource("StyleBoxFlat_stl0m")
+text = "I have saved my access token"
+
+[node name="RightPad" type="Label" parent="Pad/v1/HBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 2
+
+[connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
