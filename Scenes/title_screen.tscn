@@ -140,7 +140,6 @@ theme_override_font_sizes/font_size = 20
 text = "Register"
 
 [node name="LoginMenu" type="Control" parent="ControlPanel"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -201,7 +200,7 @@ layout_mode = 2
 
 [node name="RememberLabel" type="Label" parent="ControlPanel/LoginMenu/MarginContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
-text = "Rembmber me"
+text = "Remember me"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ControlPanel/LoginMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -222,6 +221,7 @@ size_flags_vertical = 8
 text = "Back"
 
 [node name="RegisterMenu" type="Control" parent="ControlPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -467,3 +467,4 @@ visible = false
 [connection signal="pressed" from="ControlPanel/RegisterMenu/MarginContainer/Control/RegisterBtn" to="." method="_on_register_btn_pressed"]
 [connection signal="pressed" from="ControlPanel/RegisterMenu/MarginContainer/BackBtn" to="." method="_on_back_btn_pressed"]
 [connection signal="about_to_popup" from="RegisterSuccess" to="." method="_on_register_success_about_to_popup"]
+[connection signal="tree_exited" from="RegisterSuccess" to="." method="_on_register_success_tree_exited"]

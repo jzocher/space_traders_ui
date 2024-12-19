@@ -1,6 +1,6 @@
 extends Node
 
-var auth_token = "test"
+var auth_token = ""
 var account_id = ""
 var agent_name = ""
 var headquarters = ""

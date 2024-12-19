@@ -102,7 +102,6 @@ theme_override_constants/margin_right = 5
 layout_mode = 2
 focus_mode = 2
 theme_override_constants/text_highlight_v_padding = 10
-text = "This is test text for the label"
 autowrap_mode = 1
 selection_enabled = true
 deselect_on_focus_loss_enabled = false
@@ -117,14 +116,22 @@ alignment = 2
 layout_mode = 2
 
 [node name="Confirm" type="Button" parent="Pad/v1/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ihpib")
 theme_override_styles/hover = SubResource("StyleBoxFlat_stl0m")
+disabled = true
 text = "I have saved my access token"
 
 [node name="RightPad" type="Label" parent="Pad/v1/HBoxContainer"]
 layout_mode = 2
 horizontal_alignment = 2
 
-[connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
+[node name="ConfirmBtnLockout" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Pad/v1/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="timeout" from="ConfirmBtnLockout" to="." method="_on_confirm_btn_lockout_timeout"]

@@ -61,6 +61,10 @@ func _on_login_request_completed(result, response_code, _headers, body):
 
 
 func _on_register_btn_pressed():
+	
+	$RegisterSuccess/Pad/v1/Welcome.text = "Welcome Agent testing"
+	$RegisterSuccess/Pad/v1/Container/Pad2/AccessToken.text = "This is an auth token"
+	$RegisterSuccess.visible = true
 	#var reg_agent_name = $ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer2/AgentSymbolText.text.to_upper()
 	#var reg_faction = $ControlPanel/RegisterMenu/MarginContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer2/FactionText.text.to_upper()
 	#if reg_agent_name == "":
@@ -83,11 +87,6 @@ func _on_register_btn_pressed():
 			#var body = JSON.stringify({"symbol":reg_agent_name,"faction":reg_faction})
 			#req.request_completed.connect(_on_register_request_completed)
 			#req.request(url, headers, HTTPClient.METHOD_POST, body)
-	agent_info.auth_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiUkVIQ09aIiwidmVyc2lvbiI6InYyLjIuMCIsInJlc2V0X2RhdGUiOiIyMDI0LTEwLTI3IiwiaWF0IjoxNzMzODc5MTY5LCJzdWIiOiJhZ2VudC10b2tlbiJ9.a2OV9pLqNO_3dvh7wQk2TtGNQhkvlwOEtMs5rqX3P5lSpbwRSCHy24uKHVhgf2E2LSK08GbTfdh9a6VUL-Vq-TANSoPo5TU8a10CUc0lkwtzNS_zFJKBOZ3E63txd8D-ZQhzdodQN7b_qoypQFDm5KVzOOZCw71N-IynKeqeiUp3TxJGS3sfUDGotPBfFH95vgQvFhDzfry6BVqvXIDyfoZwr3Cm7biUL8d3GZLvosabrfEFh6hsXk2MWQXbFWIbrqeXaVk-9p_SsaKWjPs9BJGiM2ynN1ppTNsuXEW7rytr3Ad2D85yT0H2rw_EHurp8Y6pD-9TzPyCUG4GzIfWaw"
-	agent_info.agent_name = "Rehcoz"
-	$RegisterSuccess/Pad/v1/Welcome.text = "Welcome Agent " + agent_info.agent_name
-	$RegisterSuccess/Pad/v1/Container/Pad2/AccessToken.text = agent_info.auth_token
-	$RegisterSuccess.visible = true
 
 
 func _on_register_request_completed(result, response_code, _headers, body):
@@ -104,12 +103,13 @@ func _on_register_request_completed(result, response_code, _headers, body):
 			set_agent_info(json)
 			print("Test: ", agent_info.agent_name)
 			$RegisterSuccess/Pad/v1/Welcome.text = "Welcome Agent " + agent_info.agent_name
-			$RegisterSuccess/Pad/v1/AccessToken.text = auth
+			$RegisterSuccess/Pad/v1/Container/Pad2/AccessToken.text = auth
 			$RegisterSuccess.visible = true
 	else:
 		print("Error:\n","result: ", result, "\nresponse: ", response_code)
 
 func set_agent_info(data):
+	agent_info.auth_token = data["data"]["token"]
 	agent_info.account_id = data["data"]["agent"]["accountId"]
 	agent_info.agent_name = data["data"]["agent"]["symbol"]
 	agent_info.headquarters = data["data"]["agent"]["headquarters"]
@@ -137,3 +137,7 @@ func _on_back_btn_pressed():
 
 func _on_factions_info_pressed():
 	$ControlPanel/RegisterMenu/Factions.visible = !$ControlPanel/RegisterMenu/Factions.visible
+
+
+func _on_register_success_tree_exited():
+	get_tree().change_scene_to_file("res://Scenes/overview.tscn")
